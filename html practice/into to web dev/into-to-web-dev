@@ -1,0 +1,159 @@
+Intro to Web Dev
+
+1. Difference Between Frontend, Backend, and Full-Stack Development.
+Frontend Development	            Backend Development	             Full-Stack Development
+<>Works on the user interface(UI).	Works on server,                   Handles both frontend
+                                    database, and business             and backend. 
+                                     logic.
+•	Frontend: Displays product images, search bar, shopping cart, and buttons. 
+•	Backend: Processes login, stores orders, checks inventory, and handles payments. 
+•	Full-Stack Developer: Builds and maintains both the website interface and the server-side functionality. 
+
+2. Client-Server Model Diagram--
++------------------+
+|     Client       |
+| (Web Browser)    |
++--------+---------+
+         |
+   HTTP Request
+         |
+         v
++------------------+
+|    Web Server    |
++--------+---------+
+         |
+ Processes Request
+         |
+         v
++------------------+
+|    Database      |
++--------+---------+
+         |
+   Sends Data
+         |
+         v
++------------------+
+|    Web Server    |
++--------+---------+
+         |
+  HTTP Response
+         |
+         v
++------------------+
+|     Client       |
+| Displays Website |
++------------------+
+
+3. How a Browser Requests and Displays a Web Page?
+    >User enters a website URL. 
+    >Browser sends an HTTP/HTTPS request to the web server. 
+    >The web server receives the request. 
+    >If needed, the server retrieves data from the database. 
+    >The server sends HTML, CSS, JavaScript, and images back to the browser. 
+    >The browser renders the page and displays it to the user. 
+
+4. Tools Required for Web Development Environment.
+Tool	                                Purpose
+Visual Studio Code (VS Code)	        Writing and editing code
+Web Browser (Chrome, Firefox, Edge)	    Testing web pages
+Live Server Extension	                Automatically refreshes the browser after changes
+Node.js	                                Runs JavaScript outside the browser
+Git	                                    Version control
+GitHub                               	Stores and shares project code online
+
+5. What is a Web Server?
+A web server is software or hardware that receives requests from clients (browsers) and sends web pages or data back to them.
+Examples
+•	Apache HTTP Server 
+•	Nginx 
+•	Microsoft Internet Information Services (IIS) 
+•	LiteSpeed Web Server
+
+6. Roles in a Web Development Project
+Frontend Developer
+•	Designs user interface. 
+•	Creates responsive web pages. 
+•	Uses HTML, CSS, and JavaScript. 
+Backend Developer
+•	Develops server-side logic. 
+•	Connects applications with databases. 
+•	Manages authentication and APIs. 
+Database Administrator (DBA)
+•	Creates and manages databases. 
+•	Ensures data security. 
+•	Performs backup and recovery. 
+•	Optimizes database performance.
+
+7. Install VS Code and Configure for HTML, CSS, JavaScript
+Steps
+>	Download and install Visual Studio Code. 
+>	Open VS Code. 
+>   Install these extensions: 
+o	Live Server 
+o	Prettier 
+o	HTML CSS Support 
+o	JavaScript (ES6) Code Snippets 
+>	Create a project folder. 
+>	Add: 
+o	index.html 
+o	style.css 
+o	script.js 
+
+>	Right-click index.html → Open with Live Server. 
+Screenshot:
+Take a screenshot after installing the extensions and opening your project folder. (This must be captured on your own computer for your assignment.)
+ 
+8. Difference Between Static and Dynamic Websites
+Static Website	Dynamic Website
+Fixed content	Content changes dynamically
+HTML and CSS only	Uses server-side languages and databases
+Faster	More interactive
+No database	Database connected
+Examples
+Static Website
+•	Personal portfolio 
+•	Company information page 
+Dynamic Website
+•	Facebook 
+•	Amazon 
+•	Online banking websites
+
+9. Five Web Browsers and Their Rendering Engines
+Browser	Rendering    Engine
+Google Chrome	     Blink
+Mozilla Firefox	     Gecko
+Microsoft Edge	     Blink
+Apple Safari       	WebKit
+Opera	             Blink
+
+10. Basic Web Architecture Diagram
+                  +------------------+
+                  |      Client      |
+                  | (Web Browser)    |
+                  +--------+---------+
+                           |
+                     HTTP Request
+                           |
+                           v
+                  +------------------+
+                  |    Web Server    |
+                  +--------+---------+
+                           |
+          +----------------+----------------+
+          |                                 |
+          v                                 v
+ +-------------------+             +------------------+
+ |     Database      |             |       APIs       |
+ | (MySQL, MongoDB)  |             | Payment, Maps    |
+ +---------+---------+             +---------+--------+
+          \                         /
+           \                       /
+            +---------+-----------+
+                      |
+               Response/Data
+                      |
+                      v
+              +---------------+
+              |    Client     |
+              | Displays Page |
+              +---------------+
