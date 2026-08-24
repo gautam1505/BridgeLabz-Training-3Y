@@ -35,3 +35,51 @@ span{
     background-color: pink;
     color: black;
 }
+.box{
+    background-color: black;
+    color: white;
+    height: 100px;
+    width: 600px;
+    border: 2px solid red;
+    border-radius: 15px;
+    background-image: url();
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*margin-top: 35px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;*/
+    margin: 35px 50px 50px 50px;
+    /*margin: 35px 50px; /* t b r l */
+
+    padding: 10px,15px,10px,15px;
+    /*padding: 10px 15px; */cx
+}
+
+.box-color{
+   width: 50%;
+   height: 100px;
+   /*background-color: rgb(133 ,57,83);*/
+   /*background-color: rgba(21,152,150,0.5);*/
+   /*background-color: #FF5733;*/
+   /*background-color: #000000;
+   color: black;*/
+   /*background-color: #ffffff;
+   color: white;*/
+   /*background-color: #FF5733;*/
+   /*background: gradient(red , yellow);*/
+   /* background: linear-gradient(to right, red , yellow);  */
+   /* background: linear-gradient(to left, red , yellow); */
+    /* background: linear-gradient(to top, red , yellow); */
+    /* background: linear-gradient(to bottom, red , yellow); */
+
+}
+#inner-box{
+    width: 300px;
+    height: 50px;
+    background-color: rgb(133 ,57,83);
+    color: white;
+    margin: 25px 150px;
+    padding: 10px 15px;
+}
