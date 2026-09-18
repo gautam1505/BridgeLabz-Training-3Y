@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        .box{
+            width:100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: aqua;
+            /* animation: animate 2s ease-in-out infinite alternate; */
+            /* overflow: hidden; */
+             /* overflow: scroll; */
+        }
+
+        @keyframes animate{
+            /* from{
+                transform: translatex(0);
+            }
+            to{
+                transform: translateX(5rem);
+                border-radius:50px;
+                background-color: aquamarine;
+            } */
+             from{
+                transform: translateY(2rem);
+                opacity: 0;
+             }
+             to{
+                transform: translateY(0);
+                border-radius: 50%;
+                opacity: 1;
+
+             }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    
+</body>
+</html>

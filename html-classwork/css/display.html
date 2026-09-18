@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <style></style>
+
+</head>
+<body>
+    <head>
+        <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+    .container{
+        width: 100%;
+        height: 100vh;
+        /* margin-top: 50px; */
+        background-color:yellow;
+        /* position: relative; */
+        /* position:fixed;*/
+        /* position:static; */
+
+        /* top: 18px; */
+        /* right: 0px;  */
+        /* left: 150px; */
+        /* right: 200px; */
+        /* bottom: 500px; */
+        
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: space-evenly;
+
+        align-items: center;
+        /* align-items: center; */
+        gap: 10px;
+        padding: 10px;
+
+    }
+    .child{
+        width: 200px;
+        height: 50%;
+        background-color: red;
+        /* position: absolute; */
+        /* top: 50%; */
+        /* left: 50%; */
+        /* transform: translate(-50%, -50%); */
+        border: 2px solid black;
+        color: white;
+       
+    }
+    .child1{
+        background-color: red;
+        order: 2;
+    }
+
+    .child2{
+        background-color: blue;
+        order: 1;
+    }
+    .child3{
+        background-color: green;
+        order: 3;
+    }
+    .child4{
+        background-color: orange;
+        order: 4;
+    }
+
+    </style>
+    </head>
+    <div class="container">
+       <div class="child child1">child 1</div>
+       <div class="child child2">child 2</div>
+
+        <div class="child child3">child 3</div>
+        <div class="child child4">child 4</div>
+</body>
+</html>
