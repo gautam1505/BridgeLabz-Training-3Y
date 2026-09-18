@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <style>
+        .slider{
+            width:500px;
+            height:300px;
+            overflow: hidden;
+
+        }
+        .slides{
+            display: flex;
+            width:1500px;
+            animation: slider 9s infinite;
+        }
+        .slides img{
+            width:500px;
+            height:300px;
+            object-fit: cover;
+        }
+        @keyframes slider{
+
+
+            0%{
+                transform: translateX(0);
+            }
+            30%{
+                transform: translateX(-500px);
+            }
+            30%{
+                transform: translateX(-500px);
+            }
+            60%{
+               transform: translateX(-100px); 
+            }
+            60%{
+               transform: translateX(-150px); 
+            }
+            100%{
+               transform: translateX(0); 
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slides">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+
+        </div>
+    </div>
+</body>
+</html>
