@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bootstrap Practice Collection</title>
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bs-primary: #6f42c1;
+            --bs-font-sans-serif: 'Poppins', sans-serif;
+        }
+
+        body {
+            font-family: var(--bs-font-sans-serif);
+            background-color: #f8f9fa;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #6f42c1, #0d6efd);
+            color: white;
+            padding: 100px 0;
+        }
+
+        .product-card,
+        .pricing-card,
+        .blog-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover,
+        .pricing-card:hover,
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .food-img {
+            max-height: 350px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-item img {
+            height: 450px;
+            object-fit: cover;
+        }
+
+        .theme-heading {
+            color: var(--bs-primary);
+        }
+
+        footer {
+            background: #212529;
+            color: white;
+            padding: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ========================================================= -->
+<!-- 1. COMPANY LANDING PAGE -->
+<!-- ========================================================= -->
+
+<section id="landing" class="p-0">
+
+    <header class="bg-dark text-white">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">TechStart</a>
+
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#landing">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portfolio">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-3 fw-bold">Build Your Future With Us</h1>
+                    <p class="lead">
+                        Innovative technology solutions for modern businesses.
+                    </p>
+                    <button class="btn btn-light btn-lg px-5">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- 2. PERSONAL PORTFOLIO -->
+<!-- ========================================================= -->
+
+<section id="portfolio">
+
+    <div class="container text-center">
+
+        <div class="bg-light text-dark p-5 rounded">
+
+            <h2 class="fw-bold mb-3">Gautam Kumar</h2>
+
+            <p class="lead">
+                Cyber Security Enthusiast | Web Developer
+            </p>
+
+            <img src="https://via.placeholder.com/180"
+                 alt="Profile"
+                 class="img-fluid rounded-circle profile-img mt-4 mb-3">
+
+            <p class="mt-4">
+                I am interested in cybersecurity, web development and
+                modern technology.
+            </p>
+
+            <div class="mt-4 mb-4">
+                <button class="btn btn-primary me-2">
+                    Hire Me
+                </button>
+
+                <button class="btn btn-outline-dark">
+                    Download CV
+                </button>
+            </div>
+
+            <div class="row justify-content-center">
+
+                <div class="col-md-6">
+
+                    <h4 class="fw-bold mb-3">Contact Me</h4>
+
+                    <form>
+                        <input type="text"
+                               class="form-control mb-3"
+                               placeholder="Your Name">
+
+                        <input type="email"
+                               class="form-control mb-3"
+                               placeholder="Your Email">
+
+                        <textarea class="form-control mb-3"
+                                  rows="4"
+                                  placeholder="Your Message"></textarea>
+
+                        <button class="btn btn-success">
+                            Send Message
+                        </button>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- 3. PRODUCT CATALOG -->
+<!-- ========================================================= -->
+
+<section id="products">
+
+    <div class="container">
+
+        <h2 class="text-center fw-bold mb-5">
+            Product Catalog
+        </h2>
+
+        <div class="row g-4">
+
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card product-card shadow-sm h-100">
+                    <img src="https://via.placeholder.com/300x200"
+                         class="card-img-top"
+                         alt="Laptop">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Laptop</h5>
+                        <p class="fw-bold">₹55,000</p>
+                        <button class="btn btn-primary">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card product-card shadow-sm h-100">
+                    <img src="https://via.placeholder.com/300x200"
+                         class="card-img-top"
+                         alt="Smartphone">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Smartphone</h5>
+                        <p class="fw-bold">₹25,000</p>
+                        <button class="btn btn-primary">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card product-card shadow-sm h-100">
+                    <img src="https://via.placeholder.com/300x200"
+                         class="card-img-top"
+                         alt="Headphones">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Headphones</h5>
+                        <p class="fw-bold">₹3,000</p>
+                        <button class="btn btn-primary">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card product-card shadow-sm h-100">
+                    <img src="https://via.placeholder.com/300x200"
+                         class="card-img-top"
+                         alt="Smart Watch">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Smart Watch</h5>
+                        <p class="fw-bold">₹5,000</p>
+                        <button class="btn btn-primary">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- 4. RESTAURANT MENU -->
+<!-- ========================================================= -->
+
+<section id="menu">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Today's Menu</h2>
+            <p class="lead">
+                Delicious food prepared by our chef.
+            </p>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-8">
+
+                <div class="table-responsive">
+
+                    <table class="table table-striped table-hover">
+
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Item</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Paneer Tikka</td>
+                                <td>Starter</td>
+                                <td>₹180</td>
+                            </tr>
+
+                            <tr>
+                                <td>Veg Biryani</td>
+                                <td>Main Course</td>
+                                <td>₹220</td>
+                            </tr>
+
+                            <tr>
+                                <td>Dal Makhani</td>
+                                <td>Main Course</td>
+                                <td>₹160</td>
+                            </tr>
+
+                            <tr>
+                                <td>Gulab Jamun</td>
+                                <td>Dessert</td>
+                                <td>₹100</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <h4 class="mb-3">Chef's Specials</h4>
+
+                <div class="list-group">
+                    <div class="list-group-item">
+                        Special Paneer
+                    </div>
+
+                    <div class="list-group-item">
+                        Veg Dum Biryani
+                    </div>
+
+                    <div class="list-group-item">
+                        Chocolate Dessert
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <figure class="text-center mt-5">
+
+            <img src="https://via.placeholder.com/800x350"
+                 class="img-fluid food-img rounded"
+                 alt="Restaurant Food">
+
+            <figcaption class="mt-2">
+                Fresh food prepared daily by our chefs.
+            </figcaption>
+
+        </figure>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- 5. CUSTOM THEMED BLOG -->
+<!-- ========================================================= -->
+
+<section id="blog">
+
+    <div class="container">
+
+        <h2 class="text-center fw-bold theme-heading mb-5">
+            TechStart Blog
+        </h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-6">
+
+                <div class="card blog-card h-100 shadow-sm">
+
+                    <div class="card-body">
+
+                        <h4 class="theme-heading">
+                            Introduction to Cyber Security
+                        </h4>
+
+                        <p>
+                            Learn the fundamentals of cybersecurity,
+                            network security and ethical hacking.
+                        </p>
+
+                        <button class="btn btn-primary">
+                            Read More
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="card blog-card h-100 shadow-sm">
+
+                    <div class="card-body">
+
+                        <h4 class="theme-heading">
+                            Learn Web Development
+                        </h4>
+
+                        <p>
+                            Explore HTML, CSS, JavaScript and Bootstrap
+                            for modern responsive websites.
+                        </p>
+
+                        <button class="btn btn-primary">
+                            Read More
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- 6. NOTIFICATIONS DASHBOARD -->
+<!-- ========================================================= -->
+
+<section id="notifications">
+
+    <div class="container">
+
+        <h2 class="text-center fw-bold mb-4">
+            Notifications Dashboard
+        </h2>
+
+        <div class="card shadow-sm">
+
+            <div class="card-body">
+
+                <div class="alert alert-success">
+                    <strong>Success!</strong>
+                    Your profile has been updated.
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>Tip:</strong>
+                    Complete your profile to get better opportunities.
+                </div>
+
+                <div class="alert alert-danger">
+                    <strong>Warning!</strong>
+                    Your password will expire soon.
+                </div>
+
+                <div class="alert alert-warning alert-dismissible fade show"
+                     role="alert">
+
+                    <strong>New Message!</strong>
+                    You have received a new message.
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="alert">
+                    </button>
+
+                </div>
+
+                <div class="bg-light border rounded p-4 mt-4">
+
+                    <h5 class="fw-bold">Summary</h5>
+
+                    <p class="mb-0">
+                        You have 3 new notifications and 1 important warning.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- 7. TASK TRACKER WITH BADGES -->
+<!-- ========================================================= -->
+
+<section id="tasks">
+
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <h2 class="fw-bold">
+                Task Tracker
+            </h2>
+
+            <span class="badge bg-danger fs-6">
+                3 Pending
+            </span>
+
+        </div>
+
+        <div class="list-group">
+
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+
+                Complete Bootstrap Assignment
+
+                <span class="badge bg-danger rounded-pill">
+                    High
+                </span>
+
+            </div>
+
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+
+                Practice Java
+
+                <span class="badge bg-warning text-dark rounded-pill">
+                    Medium
+                </span>
+
+            </div>
+
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+
+                Read Cyber Security Notes
+
+                <span class="badge bg-success rounded-pill">
+                    Low
+                </span>
+
+            </div>
+
+        </div>
+
+        <button class="btn btn-success mt-4">
+            Completed
+            <span class="badge bg-light text-dark">5</span>
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- 8. PRICING PLANS -->
+<!-- ========================================================= -->
+
+<section id="pricing">
+
+    <div class="container">
+
+        <h2 class="text-center fw-bold mb-5">
+            Choose Your Plan
+        </h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="card pricing-card shadow-sm h-100">
+
+                    <div class="card-body text-center">
+
+                        <h3>Basic</h3>
+
+                        <h2 class="my-4">
+                            ₹499
+                            <small>/month</small>
+                        </h2>
+
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item">
+                                5 Projects
+                            </li>
+                            <li class="list-group-item">
+                                Basic Support
+                            </li>
+                            <li class="list-group-item">
+                                5 GB Storage
+                            </li>
+                        </ul>
+
+                        <button class="btn btn-outline-primary">
+                            Choose Plan
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card pricing-card bg-primary text-white shadow-lg h-100">
+
+                    <div class="card-body text-center">
+
+                        <span class="badge bg-warning text-dark mb-2">
+                            Popular
+                        </span>
+
+                        <h3>Pro</h3>
+
+                        <h2 class="my-4">
+                            ₹999
+                            <small>/month</small>
+                        </h2>
+
+                        <ul class="list-group list-group-flush mb-4">
+
+                            <li class="list-group-item">
+                                20 Projects
+                            </li>
+
+                            <li class="list-group-item">
+                                Priority Support
+                            </li>
+
+                            <li class="list-group-item">
+                                50 GB Storage
+                            </li>
+
+                        </ul>
+
+                        <button class="btn btn-light">
+                            Choose Plan
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card pricing-card shadow-sm h-100">
+
+                    <div class="card-body text-center">
+
+                        <h3>Enterprise</h3>
+
+                        <h2 class="my-4">
+                            ₹1999
+                            <small>/month</small>
+                        </h2>
+
+                        <ul class="list-group list-group-flush mb-4">
+
+                            <li class="list-group-item">
+                                Unlimited Projects
+                            </li>
+
+                            <li class="list-group-item">
+                                24/7 Support
+                            </li>
+
+                            <li class="list-group-item">
+                                200 GB Storage
+                            </li>
+
+                        </ul>
+
+                        <button class="btn btn-outline-primary">
+                            Choose Plan
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- 9. BLOG PAGINATION & PAGER -->
+<!-- ========================================================= -->
+
+<section id="pagination">
+
+    <div class="container text-center">
+
+        <h2 class="fw-bold mb-4">
+            Blog Posts
+        </h2>
+
+        <p>
+            Explore our latest articles and tutorials.
+        </p>
+
+        <nav aria-label="Blog pagination">
+
+            <ul class="pagination justify-content-center">
+
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">
+                        Previous
+                    </a>
+                </li>
+
+                <li class="page-item active">
+                    <a class="page-link" href="#">
+                        1
+                    </a>
+                </li>
+
+                <li class="page-item">
+                    <a class="page-link" href="#">
+                        2
+                    </a>
+                </li>
+
+                <li class="page-item">
+                    <a class="page-link" href="#">
+                        Next
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <div class="d-flex justify-content-between mt-4">
+
+            <button class="btn btn-outline-secondary">
+                Older Posts
+            </button>
+
+            <button class="btn btn-outline-secondary">
+                Newer Posts
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- 10. TRAVEL AGENCY SHOWCASE -->
+<!-- ========================================================= -->
+
+<section id="travel">
+
+    <div class="container">
+
+        <h2 class="text-center fw-bold mb-4">
+            Explore The World
+        </h2>
+
+        <div id="travelCarousel"
+             class="carousel slide"
+             data-bs-ride="carousel">
+
+            <div class="carousel-indicators">
+
+                <button type="button"
+                        data-bs-target="#travelCarousel"
+                        data-bs-slide-to="0"
+                        class="active">
+                </button>
+
+                <button type="button"
+                        data-bs-target="#travelCarousel"
+                        data-bs-slide-to="1">
+                </button>
+
+                <button type="button"
+                        data-bs-target="#travelCarousel"
+                        data-bs-slide-to="2">
+                </button>
+
+            </div>
+
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active"
+                     data-bs-interval="3000">
+
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80"
+                         class="d-block w-100"
+                         alt="Paris">
+
+                    <div class="carousel-caption d-block">
+                        <h3>Paris</h3>
+                        <p>Experience the beauty of France.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="carousel-item"
+                     data-bs-interval="4000">
+
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80"
+                         class="d-block w-100"
+                         alt="Bali">
+
+                    <div class="carousel-caption d-block">
+                        <h3>Bali</h3>
+                        <p>Enjoy beaches and tropical adventures.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="carousel-item"
+                     data-bs-interval="5000">
+
+                    <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=1200&q=80"
+                         class="d-block w-100"
+                         alt="Japan">
+
+                    <div class="carousel-caption d-block">
+                        <h3>Japan</h3>
+                        <p>Discover traditional and modern Japan.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#travelCarousel"
+                    data-bs-slide="prev">
+
+                <span class="carousel-control-prev-icon"></span>
+
+            </button>
+
+
+            <button class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#travelCarousel"
+                    data-bs-slide="next">
+
+                <span class="carousel-control-next-icon"></span>
+
+            </button>
+
+        </div>
+
+
+        <div class="mt-5">
+
+            <h5 class="fw-bold">
+                Booking Completion
+            </h5>
+
+            <div class="progress">
+
+                <div class="progress-bar progress-bar-striped progress-bar-animated"
+                     role="progressbar"
+                     style="width: 70%;"
+                     aria-valuenow="70"
+                     aria-valuemin="0"
+                     aria-valuemax="100">
+
+                    70%
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- FOOTER -->
+<!-- ========================================================= -->
+
+<footer id="contact">
+
+    <div class="container text-center">
+
+        <h4 class="fw-bold">
+            TechStart
+        </h4>
+
+        <p>
+            Email: contact@techstart.com
+        </p>
+
+        <p>
+            Phone: +91 98765 43210
+        </p>
+
+        <p class="mb-0">
+            © 2026 TechStart. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
