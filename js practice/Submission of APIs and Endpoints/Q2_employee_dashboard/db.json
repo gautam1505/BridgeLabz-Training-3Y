@@ -1,0 +1,34 @@
+{
+    "employees": [
+        {
+            "id": 1,
+            "name": "Amit Sharma",
+            "department": "IT",
+            "status": "active"
+        },
+        {
+            "id": 2,
+            "name": "Neha Verma",
+            "department": "HR",
+            "status": "inactive"
+        },
+        {
+            "id": 3,
+            "name": "Rahul Singh",
+            "department": "Sales",
+            "status": "active"
+        },
+        {
+            "id": 4,
+            "name": "Priya Gupta",
+            "department": "Finance",
+            "status": "inactive"
+        },
+        {
+            "id": 5,
+            "name": "Karan Patel",
+            "department": "IT",
+            "status": "active"
+        }
+    ]
+}

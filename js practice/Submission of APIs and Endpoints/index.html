@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Server Assignment Q1-Q6</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 25px; color: #222; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 3px 14px #00000012; }
+        h1 { margin-top: 0; color: #17365d; }
+        select, input, button { padding: 10px; margin: 6px 4px 6px 0; border: 1px solid #bbb; border-radius: 6px; }
+        button { background: #17365d; color: white; cursor: pointer; border: 0; }
+        button:hover { background: #24558d; }
+        .item { padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 8px; display: flex; gap: 12px; align-items: center; }
+        .item img { width: 65px; height: 65px; object-fit: contain; }
+        .status { font-weight: bold; }
+        .active { color: green; } .inactive { color: #c0392b; }
+        .message { margin: 10px 0; font-weight: bold; }
+        .muted { color: #666; }
+        .skeleton { height: 18px; background: #e5e7eb; margin: 10px 0; border-radius: 5px; animation: pulse 1s infinite alternate; }
+        @keyframes pulse { to { opacity: .4; } }
+        table { border-collapse: collapse; width: 100%; margin-top: 12px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #edf2f7; }
+        #app { margin-top: 20px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>JSON Server Assignment (Q1–Q6)</h1>
+    <p class="muted">Choose a question from the dropdown. Each question uses its own JSON Server database and port.</p>
+    <label for="questionSelect"><b>Select Question:</b></label>
+    <select id="questionSelect">
+        <option value="q1">Q1 - Real-Time Live Search</option>
+        <option value="q2">Q2 - Employee Status Dashboard</option>
+        <option value="q3">Q3 - Task Manager</option>
+        <option value="q4">Q4 - Multi-API Dashboard</option>
+        <option value="q5">Q5 - Timetable Viewer</option>
+        <option value="q6">Q6 - User Registration</option>
+    </select>
+    <div id="app"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="assignment.js"></script>
+</body>
+</html>

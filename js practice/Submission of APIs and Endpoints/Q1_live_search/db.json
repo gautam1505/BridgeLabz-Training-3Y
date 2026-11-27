@@ -1,0 +1,34 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Wireless Mouse",
+            "price": 599,
+            "image": "https://placehold.co/100x100?text=Mouse"
+        },
+        {
+            "id": 2,
+            "name": "Keyboard",
+            "price": 899,
+            "image": "https://placehold.co/100x100?text=Keyboard"
+        },
+        {
+            "id": 3,
+            "name": "Headphones",
+            "price": 1299,
+            "image": "https://placehold.co/100x100?text=Headphones"
+        },
+        {
+            "id": 4,
+            "name": "USB Cable",
+            "price": 199,
+            "image": "https://placehold.co/100x100?text=Cable"
+        },
+        {
+            "id": 5,
+            "name": "Laptop Stand",
+            "price": 799,
+            "image": "https://placehold.co/100x100?text=Stand"
+        }
+    ]
+}

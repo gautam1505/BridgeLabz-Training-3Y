@@ -1,0 +1,39 @@
+{
+    "timetable": [
+        {
+            "id": 1,
+            "day": "Monday",
+            "subject": "JavaScript",
+            "faculty": "Mr. Kumar",
+            "time": "9:00 AM"
+        },
+        {
+            "id": 2,
+            "day": "Monday",
+            "subject": "DBMS",
+            "faculty": "Ms. Sharma",
+            "time": "10:00 AM"
+        },
+        {
+            "id": 3,
+            "day": "Tuesday",
+            "subject": "Machine Learning",
+            "faculty": "Dr. Singh",
+            "time": "11:00 AM"
+        },
+        {
+            "id": 4,
+            "day": "Wednesday",
+            "subject": "Computer Networks",
+            "faculty": "Mr. Verma",
+            "time": "9:00 AM"
+        },
+        {
+            "id": 5,
+            "day": "Friday",
+            "subject": "Cyber Security",
+            "faculty": "Ms. Gupta",
+            "time": "12:00 PM"
+        }
+    ]
+}
