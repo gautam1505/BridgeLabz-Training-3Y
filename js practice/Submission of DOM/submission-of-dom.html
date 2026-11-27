@@ -1,0 +1,741 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practical Assignment</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f4f4f4;
+            color: black;
+        }
+
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #2456a6;
+        }
+
+        input, textarea, button {
+            padding: 9px;
+            margin: 5px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .edit-input {
+            padding: 5px;
+        }
+
+        .yellow {
+            color: orange;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .step {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Question 4 */
+        body.light {
+            background: white;
+            color: black;
+        }
+
+        body.dark {
+            background: #222;
+            color: white;
+        }
+
+        body.blue {
+            background: #cce5ff;
+            color: #003366;
+        }
+
+        /* Question 5 */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .gallery img {
+            width: 130px;
+            height: 100px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        #modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        #modal img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        /* Question 7 */
+        #mouseBox {
+            width: 400px;
+            height: 400px;
+            background: lightblue;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        /* Question 8 */
+        #dropdownOptions {
+            display: none;
+            width: 150px;
+            background: white;
+            border: 1px solid gray;
+        }
+
+        #dropdownOptions div {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #dropdownOptions div:hover {
+            background: lightblue;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid gray;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body class="light">
+
+<h1>JavaScript Practical Assignment</h1>
+
+<!-- QUESTION 1 -->
+<div class="section">
+    <h2>1. Dynamic Product List Manager</h2>
+
+    <input type="text" id="productInput" placeholder="Enter product">
+    <button id="addProduct">Add Product</button>
+
+    <ul id="productList"></ul>
+</div>
+
+<!-- QUESTION 2 -->
+<div class="section">
+    <h2>2. Live Character Counter</h2>
+
+    <textarea id="message" maxlength="100"
+        placeholder="Write something..." rows="4"></textarea>
+
+    <p>Remaining Characters:
+        <span id="counter">100</span>
+    </p>
+
+    <button id="resetText">Reset</button>
+</div>
+
+<!-- QUESTION 3 -->
+<div class="section">
+    <h2>3. Multi-Step Form</h2>
+
+    <div id="step1" class="step active">
+        <h3>Step 1: Name</h3>
+        <input type="text" id="userName" placeholder="Enter name">
+        <button id="next1">Next</button>
+    </div>
+
+    <div id="step2" class="step">
+        <h3>Step 2: Email</h3>
+        <input type="email" id="userEmail" placeholder="Enter email">
+        <button id="back2">Back</button>
+        <button id="next2">Next</button>
+    </div>
+
+    <div id="step3" class="step">
+        <h3>Step 3: Password</h3>
+        <input type="password" id="userPassword"
+            placeholder="Enter password">
+        <button id="back3">Back</button>
+        <button id="finish">Submit</button>
+    </div>
+
+    <div id="summary"></div>
+</div>
+
+<!-- QUESTION 4 -->
+<div class="section">
+    <h2>4. Theme Switcher</h2>
+
+    <button onclick="changeTheme('light')">Light</button>
+    <button onclick="changeTheme('dark')">Dark</button>
+    <button onclick="changeTheme('blue')">Blue</button>
+</div>
+
+<!-- QUESTION 5 -->
+<div class="section">
+    <h2>5. Image Gallery with Modal</h2>
+
+    <div class="gallery" id="gallery">
+        <img src="https://picsum.photos/id/10/300/200">
+        <img src="https://picsum.photos/id/20/300/200">
+        <img src="https://picsum.photos/id/30/300/200">
+        <img src="https://picsum.photos/id/40/300/200">
+        <img src="https://picsum.photos/id/50/300/200">
+        <img src="https://picsum.photos/id/60/300/200">
+    </div>
+
+    <div id="modal">
+        <img id="modalImage">
+    </div>
+</div>
+
+<!-- QUESTION 6 -->
+<div class="section">
+    <h2>6. Real-Time Table Filter</h2>
+
+    <input type="text" id="searchStudent"
+        placeholder="Search student">
+
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Branch</th>
+                <th>CGPA</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Rahul</td>
+                <td>CSE</td>
+                <td>8.5</td>
+            </tr>
+
+            <tr>
+                <td>Amit</td>
+                <td>IT</td>
+                <td>9.0</td>
+            </tr>
+
+            <tr>
+                <td>Gautam</td>
+                <td>CSE</td>
+                <td>8.8</td>
+            </tr>
+
+            <tr>
+                <td>Priya</td>
+                <td>ECE</td>
+                <td>9.2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p id="noResults" style="display:none">
+        No results found
+    </p>
+</div>
+
+<!-- QUESTION 7 -->
+<div class="section">
+    <h2>7. Mouse Path and Coordinates Logger</h2>
+
+    <div id="mouseBox"></div>
+
+    <p id="coordinates">Move your mouse inside the box.</p>
+</div>
+
+<!-- QUESTION 8 -->
+<div class="section">
+    <h2>8. Custom Dropdown</h2>
+
+    <button id="dropdownButton">Select Option</button>
+
+    <div id="dropdownOptions">
+        <div>JavaScript</div>
+        <div>Python</div>
+        <div>Java</div>
+        <div>C++</div>
+    </div>
+</div>
+
+<!-- QUESTION 9 -->
+<div class="section">
+    <h2>9. Form Submit Blocker</h2>
+
+    <form id="registrationForm" novalidate>
+
+        <input type="text" id="name" placeholder="Enter name">
+        <p class="error" id="nameError"></p>
+
+        <input type="text" id="email" placeholder="Enter email">
+        <p class="error" id="emailError"></p>
+
+        <input type="password" id="password"
+            placeholder="Enter password">
+        <p class="error" id="passwordError"></p>
+
+        <button type="submit">Submit Form</button>
+
+    </form>
+
+    <p id="successMessage"></p>
+</div>
+
+
+<script>
+
+// QUESTION 1: Dynamic Product List Manager
+
+const productInput = document.getElementById("productInput");
+const productList = document.getElementById("productList");
+
+document.getElementById("addProduct").addEventListener("click", () => {
+
+    const productName = productInput.value.trim();
+
+    if (productName === "") {
+        alert("Please enter a product name");
+        return;
+    }
+
+    const li = document.createElement("li");
+
+    const span = document.createElement("span");
+    span.textContent = productName;
+
+    const editButton = document.createElement("button");
+    editButton.textContent = "Edit";
+    editButton.className = "edit";
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.className = "delete";
+
+    li.append(span, editButton, deleteButton);
+
+    productList.appendChild(li);
+
+    productInput.value = "";
+});
+
+// Event Delegation
+productList.addEventListener("click", (event) => {
+
+    const li = event.target.closest("li");
+
+    if (!li || !productList.contains(li)) return;
+
+    if (event.target.classList.contains("delete")) {
+        li.remove();
+    }
+
+    if (event.target.classList.contains("edit")) {
+
+        if (li.querySelector("input")) return;
+
+        const span = li.querySelector("span");
+
+        const input = document.createElement("input");
+        input.className = "edit-input";
+        input.value = span.textContent;
+
+        li.replaceChild(input, span);
+
+        input.focus();
+
+        function saveEdit() {
+            if (!input.isConnected) return;
+
+            const newSpan = document.createElement("span");
+            newSpan.textContent = input.value.trim() || span.textContent;
+
+            li.replaceChild(newSpan, input);
+        }
+
+        input.addEventListener("blur", saveEdit);
+
+        input.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                input.blur();
+            }
+        });
+    }
+});
+
+
+// QUESTION 2: Live Character Counter
+
+const message = document.getElementById("message");
+const counter = document.getElementById("counter");
+
+message.addEventListener("input", () => {
+
+    const remaining = 100 - message.value.length;
+
+    counter.textContent = remaining;
+
+    counter.className = "";
+
+    if (remaining <= 20 && remaining > 0) {
+        counter.classList.add("yellow");
+    }
+
+    if (remaining === 0) {
+        counter.classList.add("red");
+    }
+});
+
+message.addEventListener("keydown", (event) => {
+
+    if (message.value.length >= 100 &&
+        event.key.length === 1 &&
+        !event.ctrlKey &&
+        !event.metaKey &&
+        !event.altKey) {
+
+        event.preventDefault();
+    }
+});
+
+document.getElementById("resetText").addEventListener("click", () => {
+
+    message.value = "";
+    counter.textContent = 100;
+    counter.className = "";
+});
+
+
+// QUESTION 3: Multi-Step Form
+
+function showStep(stepNumber) {
+
+    document.querySelectorAll(".step").forEach(step => {
+        step.classList.remove("active");
+    });
+
+    document.getElementById("step" + stepNumber)
+        .classList.add("active");
+}
+
+document.getElementById("next1").addEventListener("click", () => {
+
+    const name = document.getElementById("userName").value.trim();
+
+    if (name === "") {
+        alert("Please enter your name");
+        return;
+    }
+
+    showStep(2);
+});
+
+document.getElementById("back2").addEventListener("click", () => {
+    showStep(1);
+});
+
+document.getElementById("next2").addEventListener("click", () => {
+
+    const email = document.getElementById("userEmail").value.trim();
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert("Enter a valid email");
+        return;
+    }
+
+    showStep(3);
+});
+
+document.getElementById("back3").addEventListener("click", () => {
+    showStep(2);
+});
+
+document.getElementById("finish").addEventListener("click", () => {
+
+    const password = document.getElementById("userPassword").value;
+
+    if (password.length < 6) {
+        alert("Password must contain at least 6 characters");
+        return;
+    }
+
+    const name = document.getElementById("userName").value;
+    const email = document.getElementById("userEmail").value;
+
+    document.querySelectorAll(".step").forEach(step => {
+        step.classList.remove("active");
+    });
+
+    document.getElementById("summary").innerHTML =
+        "<h3>Form Completed Successfully!</h3>" +
+        "<p>Name: " + escapeHTML(name) + "</p>" +
+        "<p>Email: " + escapeHTML(email) + "</p>" +
+        "<p>Password: ******</p>";
+});
+
+function escapeHTML(value) {
+    return value.replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    })[char]);
+}
+
+
+// QUESTION 4: Theme Switcher
+
+function changeTheme(theme) {
+
+    document.body.setAttribute("class", theme);
+    document.body.setAttribute("data-theme", theme);
+}
+
+
+// QUESTION 5: Image Gallery with Modal
+
+const gallery = document.getElementById("gallery");
+const modal = document.getElementById("modal");
+const modalImage = document.getElementById("modalImage");
+
+gallery.addEventListener("click", (event) => {
+
+    if (event.target.tagName === "IMG") {
+
+        modalImage.src = event.target.src;
+        modal.style.display = "flex";
+    }
+});
+
+modal.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+modalImage.addEventListener("click", (event) => {
+    event.stopPropagation();
+});
+
+
+// QUESTION 6: Real-Time Table Filter
+
+const searchStudent = document.getElementById("searchStudent");
+const rows = document.querySelectorAll("#studentTable tbody tr");
+const noResults = document.getElementById("noResults");
+
+searchStudent.addEventListener("input", () => {
+
+    const searchValue = searchStudent.value.toLowerCase();
+
+    let found = 0;
+
+    rows.forEach(row => {
+
+        const rowText = row.textContent.toLowerCase();
+
+        if (rowText.includes(searchValue)) {
+            row.style.display = "";
+            found++;
+        } else {
+            row.style.display = "none";
+        }
+    });
+
+    noResults.style.display = found === 0 ? "block" : "none";
+});
+
+
+// QUESTION 7: Mouse Coordinates Logger
+
+const mouseBox = document.getElementById("mouseBox");
+const coordinates = document.getElementById("coordinates");
+
+mouseBox.addEventListener("mousemove", (event) => {
+
+    const rect = mouseBox.getBoundingClientRect();
+
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    coordinates.textContent =
+        "clientX: " + event.clientX +
+        " | clientY: " + event.clientY +
+        " | Box X: " + x.toFixed(0) +
+        " | Box Y: " + y.toFixed(0);
+});
+
+mouseBox.addEventListener("dblclick", (event) => {
+
+    const rect = mouseBox.getBoundingClientRect();
+
+    const dot = document.createElement("div");
+
+    dot.className = "dot";
+
+    dot.style.left = (event.clientX - rect.left - 5) + "px";
+    dot.style.top = (event.clientY - rect.top - 5) + "px";
+
+    mouseBox.appendChild(dot);
+});
+
+
+// QUESTION 8: Custom Dropdown with Capturing Phase
+
+const dropdownButton = document.getElementById("dropdownButton");
+const dropdownOptions = document.getElementById("dropdownOptions");
+
+dropdownButton.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+    dropdownOptions.style.display =
+        dropdownOptions.style.display === "block" ? "none" : "block";
+});
+
+dropdownOptions.addEventListener("click", (event) => {
+
+    if (event.target.tagName === "DIV") {
+
+        dropdownButton.textContent = event.target.textContent;
+
+        dropdownOptions.style.display = "none";
+    }
+});
+
+// Capturing phase: true
+document.addEventListener("click", (event) => {
+
+    if (!event.target.closest("#dropdownOptions") &&
+        !event.target.closest("#dropdownButton")) {
+
+        dropdownOptions.style.display = "none";
+    }
+
+}, true);
+
+
+// QUESTION 9: Form Submit Blocker
+
+const registrationForm = document.getElementById("registrationForm");
+
+const nameField = document.getElementById("name");
+const emailField = document.getElementById("email");
+const passwordField = document.getElementById("password");
+
+function validateForm() {
+
+    let valid = true;
+
+    const nameValue = nameField.value.trim();
+    const emailValue = emailField.value.trim();
+    const passwordValue = passwordField.value;
+
+    document.getElementById("nameError").textContent = "";
+    document.getElementById("emailError").textContent = "";
+    document.getElementById("passwordError").textContent = "";
+
+    if (nameValue === "") {
+
+        document.getElementById("nameError").textContent =
+            "Name is required";
+
+        valid = false;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+
+        document.getElementById("emailError").textContent =
+            "Enter a valid email address";
+
+        valid = false;
+    }
+
+    if (passwordValue.length < 6) {
+
+        document.getElementById("passwordError").textContent =
+            "Password must be at least 6 characters";
+
+        valid = false;
+    }
+
+    return valid;
+}
+
+// Live error removal
+[nameField, emailField, passwordField].forEach(field => {
+
+    field.addEventListener("input", () => {
+
+        document.getElementById("successMessage").textContent = "";
+
+        validateForm();
+    });
+});
+
+// Form submission
+registrationForm.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    if (validateForm()) {
+
+        document.getElementById("successMessage").textContent =
+            "Form Submitted Successfully";
+
+        registrationForm.reset();
+
+        document.querySelectorAll(".error").forEach(error => {
+            error.textContent = "";
+        });
+    }
+});
+
+</script>
+
+</body>
+</html>
